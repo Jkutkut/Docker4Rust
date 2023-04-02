@@ -25,11 +25,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          current_tag=$(git describe --tags $(git rev-list --tags --max-count=1) 2> /dev/null)
-          if [ -z "$current_tag" ]; then
+          tags=$(git rev-list --tags --max-count=1)
+          if [ -z "$tags" ]; then
               current_tag="v1.-1.0"
               echo "First tag"
           else
+              current_tag=$(git describe --tags $(git rev-list --tags --max-count=1))
               echo "Previous tag: $current_tag"
           fi
           echo "Mayor update"
@@ -43,11 +44,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          current_tag=$(git describe --tags $(git rev-list --tags --max-count=1) 2> /dev/null)
-          if [ -z "$current_tag" ]; then
+          tags=$(git rev-list --tags --max-count=1)
+          if [ -z "$tags" ]; then
               current_tag="v1.0.-1"
               echo "First tag"
           else
+              current_tag=$(git describe --tags $(git rev-list --tags --max-count=1))
               echo "Previous tag: $current_tag"
           fi
           echo "Minor update"

@@ -22,3 +22,9 @@ docker build -t XXXXX .
 **Note 01**: In order to save space, a temporally image is created to build and another is created to run the code.
 
 **Note 02**: The `Dockerfile` copies all the project to the image. If you don't need all the files, you can add a `.dockerignore` file to the root of your project to ignore some files.
+
+## Version log:
+- v1.1.0:
+    - cargo watch
+- v1.0.0:
+    - cargo

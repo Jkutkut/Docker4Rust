@@ -24,6 +24,10 @@ docker build -t XXXXX .
 **Note 02**: The `Dockerfile` copies all the project to the image. If you don't need all the files, you can add a `.dockerignore` file to the root of your project to ignore some files.
 
 ## Version log:
+- v1.2.3:
+    - Alpine 3.23
+    - cargo 1.93.0 (083ac5135 2025-12-15)
+    - cargo-watch 8.5.3
 - v1.2.2:
     - Alpine 3.20
     - cargo 1.86.0
